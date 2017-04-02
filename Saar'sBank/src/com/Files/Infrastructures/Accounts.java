@@ -15,6 +15,14 @@ public class Accounts {
         accountNumber = ++counter;
     }
 
+    public Accounts (String name, int accountNumber, int balance) {
+
+        this.name = name;
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+        ++counter;
+    }
+
     public String getName() {
         return name;
     }
