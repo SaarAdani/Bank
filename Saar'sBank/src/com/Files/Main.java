@@ -79,7 +79,7 @@ public class Main extends Application implements MainListener {
 
     public static void extractAccountList (String data) {
 
-        String[] arr = data.split(".");
+        String[] arr = data.split("\\.");
         for (int i = 0; i < arr.length; i++) {
 
             String[] acc = arr[i].split(",");
