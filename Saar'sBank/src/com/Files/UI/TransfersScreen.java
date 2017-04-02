@@ -30,12 +30,11 @@ public class TransfersScreen extends VBox{
                 amount = Integer.parseInt(depositAmountInput.getText());
                 account.WithdrawalBalance(amount);
                 minus = account.isMinus();
-                if (!minus) {
-                    destination = listener.GetAccount(Integer.parseInt(destinationAccountInput.getText()));
-                    if (destination != null) {
-                        destination.DepositBalance(amount);
-                        listener.ChangeScene(new DetailsScreen(listener, account));
-                    }
+                destination = listener.GetAccount(Integer.parseInt(destinationAccountInput.getText()));
+                if (!minus && destination != null) {
+                    destination.DepositBalance(amount);
+                    listener.ChangeScene(new DetailsScreen(listener, account));
+
                 }else {
                     listener.ChangeScene(new DetailsScreen(listener,account));
                 }

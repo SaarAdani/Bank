@@ -25,10 +25,8 @@ public class CreateScreen extends BasicScreen {
             @Override
             public void handle(ActionEvent event) {
 
-                listener.AddAccount(createAccountInput.getText());
-                accountNumber = listener.GetCounter();
-                account = listener.GetAccount(listener.GetCounter());
-                listener.ChangeScene(new DetailsScreen(listener,account));
+                Accounts a =listener.AddAccount(createAccountInput.getText());
+                listener.ChangeScene(new DetailsScreen(listener,a));
             }
         });
         getChildren().add(0,createAccountInput);
